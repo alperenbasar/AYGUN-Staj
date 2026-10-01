@@ -1,5 +1,4 @@
 # BLE Tetiklemeli ve PC Kontrollü Hibrit LED Otomasyon Sistemi
-
 Bu çalışma; mobil cihaz (akıllı telefon), HC-08 BLE modülü, STM32F429 mikrodenetleyicisi ve bilgisayar terminali (Tera Term) arasında durum makinesi (state machine) mantığıyla çalışan iki yönlü bir interaktif kontrol mimarisidir.
 
 ### Çalışma Mantığı ve Kontrol Akışı
