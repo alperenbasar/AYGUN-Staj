@@ -23,20 +23,20 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
    - Akıllı telefon (BLE Terminal) ile bilgisayar (Tera Term) arasında iki yönlü seri haberleşme köprüsü.
    - Asenkron veri alımı için kesme tabanlı altyapı (`HAL_UART_Receive_IT`) ve callback yönetimi.
 
-3. [03-BLE-Tetiklemeli ve PC-Kontrollü-Hibrit-LED-Otomasyonu](./03-BLE-Tetiklemeli%20ve%20PC-Kontrollü-Hibrit-LED-Otomasyonu)
+3. [03-BLE-Tetiklemeli ve PC-Kontrollü-Hibrit-LED-Otomasyonu](./03-BLE-Tetiklemeli%20ve%20PC-Kontrollu-Hibrit-LED-Otomasyonu)
    - Telefondan gelen Bluetooth komutuyla tetiklenen durum makinesi (state machine) mimarisi.
    - PC terminaline dinamik menü basılması ve klavye girdisine göre dahili/harici LED kontrolü.
    - Seri port kilitlenmelerini önleyen `ORE` (Overrun Error) hata yönetimi.
 
-4. [04-STM32-Donanımsal-Timer-PWM ile Pürüzsüz LED Parlaklık Kontrolü](./04-STM32-Donanımsal-Timer-PWM%20ile%20Pürüzsüz%20LED%20Parlaklık%20Kontrolü)
+4. [04-STM32-Donanımsal-Timer-PWM ile Pürüzsüz LED Parlaklık Kontrolü](./04-STM32-Donanimsal-Timer-PWM%20ile%20Puruzsuz%20LED%20Parlaklik%20Kontrolu)
    - `TIM1 Channel 1` üzerinden donanımsal Darbe Genişlik Modülasyonu (PWM) sinyali üretimi.
    - 1000 adımlı yüksek çözünürlükle akıcı ve titreşimsiz "Breathing / Nefes Alma" görsel efekti.
 
-5. [05-STM32-12-Bit-ADC-Okuması ile Gerçek Zamanlı PWM Parlaklık Kontrolü](./05-STM32-12-Bit-ADC-Okuması%20ile%20Gerçek%20Zamanlı%20PWM%20Parlaklık%20Kontrolü)
+5. [05-STM32-12-Bit-ADC-Okuması ile Gerçek Zamanlı PWM Parlaklık Kontrolü](./05-STM32-12-Bit-ADC-Okumasi%20ile%20Gercek%20Zamanli%20PWM%20Parlaklik%20Kontrolu)
    - Potansiyometre üzerinden 12-bit çözünürlükte (0–4095) analog gerilim verisi okuma (`ADC1`).
    - Matematiksel ölçekleme ile analog değerin `TIM3` PWM doluluk oranına dönüştürülmesi ve gerçek zamanlı LED parlaklık ayarı.
 
-6. [06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Sürüş-Denemesi](./06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Sürüş-Denemesi (BSP Hello World))
+6. [06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Sürüş-Denemesi](./06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Surus-Denemesi (BSP Hello World))
    - Dahili 2.4" TFT LCD ekranın BSP sürücü katmanı ile ayağa kaldırılması ("Hello World" testi).
    - Maksimum çekirdek frekansı (180 MHz Over-Drive) ve temel saat/güç konfigürasyonunun doğrulanması.
 
