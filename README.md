@@ -4,7 +4,7 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
 
 ---
 
-## 🛠️ Kullanılan Donanım ve Araçlar
+## Kullanılan Donanım ve Araçlar
 - **Geliştirme Kiti:** STM32F429I-DISC1 (ARM Cortex-M4 @ 180 MHz)
 - **Ekran & Grafik Donanımı:** 2.4" QVGA TFT LCD, LTDC, STMPE811 Dokunmatik Kontrolcü, Harici SDRAM
 - **Kablosuz Haberleşme:** HC-08 Bluetooth Low Energy (BLE) Modülü
