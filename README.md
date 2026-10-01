@@ -36,7 +36,7 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
    - Potansiyometre üzerinden 12-bit çözünürlükte (0–4095) analog gerilim verisi okuma (`ADC1`).
    - Matematiksel ölçekleme ile analog değerin `TIM3` PWM doluluk oranına dönüştürülmesi ve gerçek zamanlı LED parlaklık ayarı.
 
-6. [06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Sürüş-Denemesi](.https://github.com/alperenbasar/AYGUN-Staj/tree/e3ee437591949f3e3035344abb182a8d678841e7/06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-%C4%B0lk-S%C3%BCr%C3%BC%C5%9F-Denemesi%20(BSP%20Hello%20World))
+6. [06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Sürüş-Denemesi](./06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Sürüş-Denemesi (BSP Hello World))
    - Dahili 2.4" TFT LCD ekranın BSP sürücü katmanı ile ayağa kaldırılması ("Hello World" testi).
    - Maksimum çekirdek frekansı (180 MHz Over-Drive) ve temel saat/güç konfigürasyonunun doğrulanması.
 
