@@ -2,7 +2,7 @@
 
 Bu çalışma; STM32F429 mikrodenetleyicisinin dahili Analog-Dijital Dönüştürücüsü (ADC1) ile harici bir potansiyometreden gerilim verisi okunması ve bu verinin matematiksel olarak ölçeklenerek donanımsal Timer PWM (TIM3) sinyaliyle bir LED'in parlaklığının gerçek zamanlı kontrol edilmesi amacıyla geliştirilmiştir.
 
-### 📌 Çalışma Mantığı ve Veri Akışı
+### Çalışma Mantığı ve Veri Akışı
 1. **Analog Dönüşüm (Polling Modu):**
    - `PA0` pinine uygulanan analog gerilim, `hadc1` üzerinden 12-bit çözünürlükle (0–4095 aralığı) taranır.
    - `HAL_ADC_PollForConversion` fonksiyonuyla dönüşümün tamamlandığı teyit edilir ve anlık değer `HAL_ADC_GetValue` ile okunur.
