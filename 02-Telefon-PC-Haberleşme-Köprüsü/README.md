@@ -1,0 +1,33 @@
+STM32 ve HC-08 BLE ile Telefon - PC Haberleşme Köprüsü
+Bu çalışma; mobil cihaz (akıllı telefon), HC-08 Bluetooth Low Energy (BLE) modülü ve bilgisayar terminali (Tera Term) arasında STM32 mikrodenetleyicisi üzerinden iki yönlü kablosuz haberleşme köprüsü kurmak amacıyla geliştirilmiştir.
+
+Çalışma Mantığı ve Veri Akışı
+Mobil Giriş: Akıllı telefondaki BLE seri terminal uygulamasından HC-08 modülüne kablosuz olarak bir karakter veya komut gönderilir.
+
+Asenkron Alım (Kesme): HC-08 modülü veriyi STM32'nin USART1 hattına iletir. İşlemci döngüsünü bloklamamak için HAL_UART_Receive_IT fonksiyonu ile 1 baytlık donanımsal kesme (Interrupt) dinlemesi kullanılır.
+
+Yankı ve Yanıt (Callback): Veri ulaştığı anda HAL_UART_RxCpltCallback fonksiyonu tetiklenir; sistem hem verinin başarıyla alındığını teyit etmek hem de hatta yanıt basmak amacıyla yazılan metni iletir.
+
+Terminal Görüntüleme: Bilgisayara bağlı Sanal COM Port (VCP) veya harici seri hat üzerinden Tera Term yazılımı açılarak gelen ve giden veriler gerçek zamanlı olarak doğrulanır.
+
++--------------------+       BLE (Kablosuz)       +-------------------+
+| Akıllı Telefon     | <========================> |  HC-08 Modülü     |
+| (BLE Terminal App) |                            +---------+---------+
++--------------------+                                      | UART (9600 Baud)
+                                                            v
++--------------------+     UART / ST-LINK VCP     +-------------------+
+| Host PC            | <------------------------> | STM32F429         |
+| (Tera Term)        |                            | (Interrupt Tabanlı|
++--------------------+                            |  Rx Callback)     |
+                                                  +-------------------+
+Donanım ve İletişim Parametreleri
+Mikrodenetleyici: STM32F429ZIT6
+
+HC-08 BLE Hattı (USART1): 9600 Baud, 8 Data Bit, No Parity, 1 Stop Bit (Kesme / Interrupt aktif)
+
+İkinci Seri Hat (USART3): 115200 Baud, 8 Data Bit, No Parity, 1 Stop Bit
+
+Geri Bildirim Yanıtı: alperen\r\n
+
+Dosyalar
+main.c: Çift UART çevre birimi konfigürasyonu, kesme kurulumu ve HAL_UART_RxCpltCallback yanıt mantığını içeren ana C kodu.
