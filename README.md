@@ -19,7 +19,7 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
    - Python tabanlı tam ekran kalkanı (overlay) ile bilgisayar erişimini engelleme/açma.
    - HC-08 BLE modülü üzerinden mobil cihaza anlık durum telemetrisi iletimi.
 
-2. [02-Telefon-PC-Haberleşme-Köprüsü](./02-Telefon-PC-Haberleşme-Köprüsü)
+2. [02-Telefon-PC-Haberleşme-Köprüsü](./02-Telefon-PC-Haberlesme-Koprusu)
    - Akıllı telefon (BLE Terminal) ile bilgisayar (Tera Term) arasında iki yönlü seri haberleşme köprüsü.
    - Asenkron veri alımı için kesme tabanlı altyapı (`HAL_UART_Receive_IT`) ve callback yönetimi.
 
