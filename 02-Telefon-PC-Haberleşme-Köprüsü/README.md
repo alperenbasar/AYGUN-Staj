@@ -10,16 +10,6 @@ Yankı ve Yanıt (Callback): Veri ulaştığı anda HAL_UART_RxCpltCallback fonk
 
 Terminal Görüntüleme: Bilgisayara bağlı Sanal COM Port (VCP) veya harici seri hat üzerinden Tera Term yazılımı açılarak gelen ve giden veriler gerçek zamanlı olarak doğrulanır.
 
-+--------------------+       BLE (Kablosuz)       +-------------------+
-| Akıllı Telefon     | <========================> |  HC-08 Modülü     |
-| (BLE Terminal App) |                            +---------+---------+
-+--------------------+                                      | UART (9600 Baud)
-                                                            v
-+--------------------+     UART / ST-LINK VCP     +-------------------+
-| Host PC            | <------------------------> | STM32F429         |
-| (Tera Term)        |                            | (Interrupt Tabanlı|
-+--------------------+                            |  Rx Callback)     |
-                                                  +-------------------+
 Donanım ve İletişim Parametreleri
 Mikrodenetleyici: STM32F429ZIT6
 
