@@ -121,18 +121,14 @@ int main(void)
   //MX_DMA2D_Init();
 
   /* USER CODE BEGIN 2 */
-  // CubeMX'in saatini kapattığı FMC yerine kartın kendi resmi BSP SDRAM başlatıcısını kullanıyoruz
   BSP_SDRAM_Init();
 
-    // 2. Ekranı 240x320 ILI9341 profiliyle tam başlat
     BSP_LCD_Init();
 
-    // 3. Katmanı ayarla
     BSP_LCD_LayerDefaultInit(LCD_BACKGROUND_LAYER, LCD_FRAME_BUFFER);
     BSP_LCD_SelectLayer(LCD_BACKGROUND_LAYER);
     BSP_LCD_DisplayOn();
 
-    // 4. Ekranı tamamen siyah yap
     BSP_LCD_Clear(LCD_COLOR_BLACK);
 
     Init_Stars();
@@ -143,7 +139,6 @@ int main(void)
   while (1)
   {
       for (int i = 0; i < NUM_STARS; i++) {
-          // Önceki yıldızı sil
           if (stars[i].prev_sx >= 4 && stars[i].prev_sx < (SCREEN_W - 4) &&
               stars[i].prev_sy >= 4 && stars[i].prev_sy < (SCREEN_H - 4)) {
               BSP_LCD_DrawPixel(stars[i].prev_sx, stars[i].prev_sy, LCD_COLOR_BLACK);
@@ -152,7 +147,6 @@ int main(void)
               BSP_LCD_DrawPixel(stars[i].prev_sx + 1, stars[i].prev_sy + 1, LCD_COLOR_BLACK);
           }
 
-          // Yıldızı yaklaştır
           stars[i].z -= 2.0f;
 
           if (stars[i].z <= 10.0f) {
