@@ -271,10 +271,9 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-    // 1. TELEFONDAN VERİ GELDİĞİNDE (HC-08 / USART6)
+    // TELEFONDAN VERİ GELDİĞİNDE
     if (huart->Instance == USART6)
     {
-        // Gelen karakter Enter / Satır sonu değilse diziye ekle
         if (bt_rx_byte != '\r' && bt_rx_byte != '\n')
         {
             if (bt_index < sizeof(bt_buffer) - 1)
@@ -282,34 +281,32 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
                 bt_buffer[bt_index++] = bt_rx_byte;
             }
         }
-        else // Satır sonu geldi (Kelime bitti)
+        else
         {
             if (bt_index > 0)
             {
-                bt_buffer[bt_index] = '\0'; // Diziyi metin olarak sonlandır
-
-                // Gelen metin tam olarak "lamba" ise Tera Term'e soruyu gönder
+                bt_buffer[bt_index] = '\0'; 
+             
                 if (strcmp(bt_buffer, "lamba") == 0)
                 {
                     char *soru = "\r\n[KOMUT ALINDI] Hangi lamba yansin? (1: Harici LED, 2: Dahili LED)\r\nSeciminiz > ";
                     HAL_UART_Transmit(&huart1, (uint8_t*)soru, strlen(soru), 100);
                     pc_bekleniyor = 1; // PC'den seçim beklemeye geç
                 }
-                bt_index = 0; // Bir sonraki kelime için sıfırla
+                bt_index = 0;
             }
         }
-        // Bluetooth'u sonraki bayt için tekrar dinlemeye kur
+        // Bluetooth'u tekrar dinlemeye kur
         HAL_UART_Receive_IT(&huart6, &bt_rx_byte, 1);
     }
-
-    // 2. BİLGİSAYARDAN (Tera Term / USART1) TUŞA BASILDIĞINDA
+     
     else if (huart->Instance == USART1)
     {
         if (pc_bekleniyor == 1)
         {
             if (pc_rx_byte == '1')
             {
-                // Harici LED'i (PD12) yak, Dahiliyi (PG13) söndür
+       
                 HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
                 HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
 
@@ -319,21 +316,20 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             }
             else if (pc_rx_byte == '2')
             {
-                // Dahili LED'i (PG13) yak, Hariciyi (PD12) söndür
+                // Dahili LED'i yak, Hariciyi söndür
                 HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_SET);
                 HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
 
                 char *msg = "2\r\n>> Dahili LED (PG13) YAKILDI.\r\n";
                 HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), 100);
-                pc_bekleniyor = 0; // Bekleme bitti
+                pc_bekleniyor = 0; 
             }
         }
-        // PC hattını sonraki tuş için tekrar dinlemeye kur
+        // PC hattını tekrar kur
         HAL_UART_Receive_IT(&huart1, &pc_rx_byte, 1);
     }
 }
 
-// Olası hat taşmalarında kilidi kaldıran emniyet fonksiyonu
 void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 {
     if (huart->Instance == USART6)
