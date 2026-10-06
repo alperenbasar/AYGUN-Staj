@@ -97,13 +97,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  for (int i = 0; i <= 1000; i++) // Adım aralığını 5'ten 1'e düşürdük
+	  for (int i = 0; i <= 1000; i++)
 	        {
 	            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, i);
-	            HAL_Delay(2); // Bekleme süresini de 5ms'den 2ms'ye düşürdük
+	            HAL_Delay(2);
 	        }
 
-	        // Parlaklığı ÇOK DAHA yavaş ve pürüzsüz azalt
 	        for (int i = 1000; i >= 0; i--)
 	        {
 	            __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, i);
