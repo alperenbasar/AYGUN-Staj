@@ -24,7 +24,6 @@
 #include "stm32f429i_discovery_lcd.h"
 #include <stdlib.h>
 /* USER CODE END Includes */
-
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
