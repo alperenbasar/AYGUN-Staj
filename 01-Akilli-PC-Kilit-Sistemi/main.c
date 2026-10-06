@@ -121,7 +121,7 @@ int main(void)
   // 2. Dokunmatiği Başlat (Ekran çözünürlüğü: 240x320)
   BSP_TS_Init(240, 320);
 
-  // 3. Üst Yarıya Yeşil "AC" Butonu Çiz
+  // "AC" Butonu Çiz
   BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
   BSP_LCD_FillRect(0, 0, 240, 160);
   BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
@@ -129,7 +129,7 @@ int main(void)
   BSP_LCD_SetFont(&Font24);
   BSP_LCD_DisplayStringAt(0, 60, (uint8_t *)"AC", CENTER_MODE);
 
-  // 4. Alt Yarıya Kırmızı "KILITLE" Butonu Çiz
+  // "KILITLE" Butonu Çiz
   BSP_LCD_SetTextColor(LCD_COLOR_RED);
   BSP_LCD_FillRect(0, 160, 240, 160);
   BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
