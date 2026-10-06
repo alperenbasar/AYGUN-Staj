@@ -210,7 +210,6 @@ static void MX_USART3_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART3_Init 2 */
-
   /* USER CODE END USART3_Init 2 */
 
 }
