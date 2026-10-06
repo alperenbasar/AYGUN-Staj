@@ -112,7 +112,6 @@ int main(void)
   MX_UART5_Init();
 
   /* USER CODE BEGIN 2 */
-  // SENİN ORİJİNAL ÇALIŞAN ÇİZİM KODUN - BİREBİR AYNI, HİÇBİR ŞEY DEĞİŞMEDİ
   BSP_LCD_Init();
   BSP_LCD_LayerDefaultInit(0, LCD_FRAME_BUFFER);
   BSP_LCD_SelectLayer(0);
@@ -482,7 +481,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-// Numpad'den çıkışta senin orijinal tasarımını tam olarak çizen fonksiyon
 void DrawMainScreen(void) {
     BSP_LCD_Clear(LCD_COLOR_BLACK);
     osDelay(20);
@@ -509,7 +507,7 @@ void DrawMainScreen(void) {
     BSP_LCD_DisplayStringAt(0, 225, (uint8_t *)"KILITLE", CENTER_MODE);
 }
 
-// Numpad Çizim Fonksiyonu
+// Numpad Çizim
 void DrawNumpadScreen(void) {
     BSP_LCD_Clear(LCD_COLOR_BLACK);
     BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
@@ -546,7 +544,7 @@ void DrawNumpadScreen(void) {
     BSP_LCD_DisplayStringAt(192, 280, (uint8_t *)"OK", LEFT_MODE);
 }
 
-// Şifre Yıldızlarını Gösterme
+// Şifre Yıldızları
 void UpdatePinDisplay(char* pin_str) {
     BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
     BSP_LCD_FillRect(0, 0, 240, 79);
@@ -573,25 +571,21 @@ void StartDefaultTask(void const * argument)
   MX_USB_HOST_Init();
 
   /* USER CODE BEGIN 5 */
-  // SENİN ORİJİNAL ÇALIŞAN TASK KODUN - HİÇBİR ŞEYİ DEĞİŞTİRMEDİM
   // 1. SDRAM'İ BAŞLAT VE KOMUTLARI GÖNDER
   BSP_SDRAM_Init();
   osDelay(50); // SDRAM'in oturması için kısa bir bekleme
 
-  // 2. LCD BAŞLATMA VE KATMAN AYARI
   BSP_LCD_Init();
   BSP_LCD_LayerDefaultInit(LCD_BACKGROUND_LAYER, LCD_FRAME_BUFFER);
   BSP_LCD_SelectLayer(LCD_BACKGROUND_LAYER);
   BSP_LCD_DisplayOn();
 
-  // 3. EKRANI TEMİZLE
   BSP_LCD_Clear(LCD_COLOR_BLACK);
   osDelay(20);
 
-  // 4. DOKUNMATİK BAŞLAT
   BSP_TS_Init(240, 320);
 
-  // 5. BUTONLARI ÇİZ
+  // BUTONLARI ÇİZ
   // Üst Buton (Yeşil)
   BSP_LCD_SetTextColor(LCD_COLOR_GREEN);
   BSP_LCD_FillRect(0, 0, 240, 158);
@@ -600,13 +594,11 @@ void StartDefaultTask(void const * argument)
   BSP_LCD_SetTextColor(LCD_COLOR_RED);
   BSP_LCD_FillRect(0, 162, 240, 158);
 
-  // Araya siyah ayırıcı çizgi
   BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
   BSP_LCD_DrawHLine(0, 159, 240);
   BSP_LCD_DrawHLine(0, 160, 240);
   BSP_LCD_DrawHLine(0, 161, 240);
 
-  // Yazı Fontu
   BSP_LCD_SetFont(&Font24);
 
   // "AC" Yazısı
@@ -624,7 +616,6 @@ void StartDefaultTask(void const * argument)
   char entered_pin[10] = "";
   int pin_index = 0;
 
-  // !!! DİKKAT: ŞİFRENİ BURAYA YAZ !!!
   char my_password[] = "2";
 
   // 6. FREERTOS GÖREV DÖNGÜSÜ
@@ -637,10 +628,9 @@ void StartDefaultTask(void const * argument)
           uint16_t x = TS_State.X;
           uint16_t y = TS_State.Y;
 
-          // EĞER ANA EKRANDAYSAN (0)
           if (current_state == 0)
           {
-              if(y > 160) // KİLİTLE BUTONUNA BASILDI
+              if(y > 160)
               {
                   HAL_UART_Transmit(&huart1, (uint8_t*)"LOCK\n", 5, 100);
                   HAL_UART_Transmit(&huart5, (uint8_t*)"PC Kilitlendi\r\n", 15, 100);
@@ -651,7 +641,7 @@ void StartDefaultTask(void const * argument)
 
                   osDelay(500);
               }
-              else if(y <= 160) // AÇ BUTONUNA BASILDI -> NUMPAD'E GEÇ
+              else if(y <= 160)
               {
                   current_state = 1;
                   pin_index = 0;
@@ -662,15 +652,12 @@ void StartDefaultTask(void const * argument)
                   osDelay(400);
               }
           }
-          // EĞER NUMPAD EKRANINDAYSAN (1)
           else if (current_state == 1)
           {
               if (y > 70) // Sadece rakamların veya butonların olduğu alana basıldıysa
               {
                   char key = 0;
 
-                  // OK TUŞUNUN FİZİKSEL KAYMASINI ÇÖZEN YENİ MANTIK
-                  // Eğer Y ekseninde sağ alt çeyreğe dokunulursa tartışmasız OK (E) kabul et.
                   if (y > 220 && x > 140) {
                       key = 'E';
                   }
