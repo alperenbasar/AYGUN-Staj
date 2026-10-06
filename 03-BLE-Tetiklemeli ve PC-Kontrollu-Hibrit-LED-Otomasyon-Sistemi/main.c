@@ -52,7 +52,6 @@ uint8_t bt_index = 0;
 
 uint8_t pc_bekleniyor = 0;  // 1 olduğunda PC'den seçim yapılması bekleniyordur
 /* USER CODE END PV */
-
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
