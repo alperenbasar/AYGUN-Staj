@@ -4,7 +4,6 @@ import threading
 import time
 import sys
 
-# Kendi ST-Link COM portunu yaz
 PORT_ADI = 'COM10'
 BAUD_RATE = 115200
 
@@ -13,13 +12,12 @@ class AkilliKilitSistemi:
         self.root = tk.Tk()
         self.root.title("Akıllı Kilit")
         
-        # INTEL DPST KORUMASI: Saf siyah yerine çok koyu gri (#121212) kullanıyoruz
         self.root.configure(bg='#121212')
         self.root.attributes('-fullscreen', True) 
         self.root.attributes('-topmost', True)    
         self.root.config(cursor="none")           
         
-        # YAZI RENGİ: Parlak yeşil (#00FF00) yapıldı
+        # YAZI RENGİ
         self.label = tk.Label(self.root, text="SİSTEM KİLİTLİ\nLütfen STM32 ekranından şifrenizi giriniz.", 
                               fg="#00FF00", bg="#121212", font=("Arial", 26, "bold"))
         self.label.place(relx=0.5, rely=0.5, anchor="center")
@@ -27,7 +25,6 @@ class AkilliKilitSistemi:
         self.is_locked = False
         self.root.withdraw()
         
-        # ACİL DURUM ÇIKIŞI
         self.root.bind('<Escape>', self.acil_cikis)
 
     def acil_cikis(self, event):
