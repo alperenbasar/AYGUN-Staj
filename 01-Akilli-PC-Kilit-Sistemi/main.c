@@ -565,7 +565,6 @@ void UpdatePinDisplay(char* pin_str) {
     }
 }
 /* USER CODE END 4 */
-
 void StartDefaultTask(void const * argument)
 {
   MX_USB_HOST_Init();
