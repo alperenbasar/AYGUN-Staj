@@ -7,8 +7,9 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
 ## Kullanılan Donanım ve Araçlar
 - **Geliştirme Kiti:** STM32F429I-DISC1 (ARM Cortex-M4 @ 180 MHz)
 - **Ekran & Grafik Donanımı:** 2.4" QVGA TFT LCD, LTDC, STMPE811 Dokunmatik Kontrolcü, Harici SDRAM
+- **Sensörler ve Modüller:** MPU6050 (İvmeölçer ve Jiroskop), MicroSD Kart Modülü (SPI)
 - **Kablosuz Haberleşme:** HC-08 Bluetooth Low Energy (BLE) Modülü
-- **Geliştirme Ortamı:** STM32CubeIDE (HAL Kütüphaneleri), Tera Term Terminali, Python (Tkinter & pySerial)
+- **Geliştirme Ortamı & Yazılım:** STM32CubeIDE (HAL Kütüphaneleri, FatFs), Tera Term, Python (Tkinter & pySerial), Notify API
 
 ---
 
@@ -43,3 +44,13 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
 7. [07-STM32F429--Dahili-TFT-LCD ile 3D-Starfield-Grafik-Simülasyonu](./07-STM32F429--Dahili-TFT-LCD%20ile%203D-Starfield-Grafik-Simülasyonu)
    - 3 boyutlu uzay koordinatlarının ($X, Y, Z$) ekrana 2D perspektif izdüşümü ile yansıtılması.
    - Harici SDRAM üzerinde ekran yırtılmasını (flicker) engelleyen dinamik piksel temizleme ve çizim tekniğiyle 70 parçacıklı yıldız alanı simülasyonu.
+
+8. [08-STM32-MPU6050-ile-Akilli-Guvenlik-Sistemi](./08-STM32-MPU6050-ile-Akilli-Guvenlik-Sistemi)
+   - MPU6050 ivmeölçer/jiroskop sensörü ile hassas anomali (hareket/sarsıntı) tespiti yapan çok katmanlı alarm sistemi.
+   - İhlal durumunda PC'ye seri port üzerinden uyarı iletimi ve Notify API ile akıllı telefona mobil "Push" bildirim entegrasyonu.
+   - Dahili dokunmatik TFT ekranın Numpad arayüzü olarak kullanılarak alarmın donanımsal şifre ile iptal edilmesi (Disarm) mekanizması.
+
+9. [09-STM32-GMeter-ve-Karakutu-Veri-Kaydedici](./09-STM32-GMeter-ve-Karakutu-Veri-Kaydedici)
+   - MPU6050 ivme verilerinin Low-Pass Filter (Düşük Geçiren Filtre) ile işlenerek ekranda 25 FPS hızında gerçek zamanlı "G-Meter" (Radar) arayüzüne dönüştürülmesi.
+   - Araç dinamiği verilerinin (Zaman, AccX, AccY, AccZ) MicroSD karta (FAT32) donanımsal SPI hattı üzerinden kesintisiz bir `.csv` dosyası olarak kaydedilmesi (Data Logging).
+   - Ekranın LTDC/SDRAM DMA veri trafiği ile SD kartın SPI okuma/yazma döngüleri arasındaki veri yolu çakışmalarının (Bus matrix congestion), donanımsal pin izolasyonu (CS pini tahsisi) ile kilitlenmeden (non-blocking) çözümlenmesi.
