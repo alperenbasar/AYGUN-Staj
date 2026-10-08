@@ -15,7 +15,6 @@
 // SPI4 Tanimi
 extern SPI_HandleTypeDef hspi4;
 
-// CS Pini - PC3 Olarak Değiştirildi (Çakışma yok)
 #define SD_CS_LOW()  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_4, GPIO_PIN_RESET)
 #define SD_CS_HIGH() HAL_GPIO_WritePin(GPIOE, GPIO_PIN_4, GPIO_PIN_SET)
 
