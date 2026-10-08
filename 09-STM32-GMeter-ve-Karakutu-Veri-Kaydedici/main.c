@@ -75,10 +75,6 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
 
-  // =========================================================================
-  // 1. İŞTE SENİN KODUNDA EKSİK OLAN VE ÇALIŞMAYI ENGELLEYEN BLOK BURASI
-  // SPI4 PİNLERİNİ İŞLEMCİYE ZORLA TANITIYORUZ Kİ SİNYALLER HAVADA KALMASIN
-  // =========================================================================
   __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_SPI4_CLK_ENABLE();
 
@@ -99,7 +95,6 @@ int main(void)
   GPIO_InitStruct_CS.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct_CS);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_4, GPIO_PIN_SET);
-  // =========================================================================
 
   HAL_Delay(1000);
 
