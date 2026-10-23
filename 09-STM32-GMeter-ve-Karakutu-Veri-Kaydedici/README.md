@@ -16,7 +16,7 @@ Ekran: Yerleşik 2.4" TFT LCD
 Sensör: MPU6050 İvmeölçer & Jiroskop
 Depolama: MicroSD Kart Modülü (SPI Haberleşmesi - FAT32)
 
-Pin Konfigürasyonu
+
 Not: Bu projede yerleşik ekranın SDRAM ve LTDC (LCD-TFT Display Controller) trafiği ile SD Kartın SPI trafiği arasındaki donanımsal çakışmaları (DMA Bus meşguliyeti) önlemek için, standart pinler yerine özel pin haritalaması kullanılmıştır.
 
 
