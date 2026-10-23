@@ -54,3 +54,8 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
    - MPU6050 ivme verilerinin Low-Pass Filter (Düşük Geçiren Filtre) ile işlenerek ekranda 25 FPS hızında gerçek zamanlı "G-Meter" (Radar) arayüzüne dönüştürülmesi.
    - Araç dinamiği verilerinin (Zaman, AccX, AccY, AccZ) MicroSD karta (FAT32) donanımsal SPI hattı üzerinden kesintisiz bir `.csv` dosyası olarak kaydedilmesi (Data Logging).
    - Ekranın LTDC/SDRAM DMA veri trafiği ile SD kartın SPI okuma/yazma döngüleri arasındaki veri yolu çakışmalarının (Bus matrix congestion), donanımsal pin izolasyonu (CS pini tahsisi) ile kilitlenmeden (non-blocking) çözümlenmesi.
+  
+  10. [10-PIC12F1822-Sarj-Durumu-ve-Animasyon-Gostergesi](./10-PIC12F1822-Sarj-Durumu-ve-Animasyon-Gostergesi)
+    - Yeni geliştirilen donanım ürünü için Microchip PIC12F1822 (SOIC-8/DIP-8) kullanılarak tasarlanan özel şarj durum göstergesi ve animasyon kontrol kartı.
+    - KiCad ile şematik tasarımı ve LPKF prototip/kazıma tezgahına uygun PCB yerleşimi; dahili pull-up dirençleri ve donanımsal ICSP programlama hattı entegrasyonu.
+    - Şarj entegresinden gelen sinyallerin (STAT) gürültüden arındırılması için yazılımsal filtreleme (debounce) algoritmaları ve şarj durumuna göre LED animasyon döngüleri (Şarj oluyor / Şarj bitti).
