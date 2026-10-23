@@ -19,14 +19,6 @@ Depolama: MicroSD Kart Modülü (SPI Haberleşmesi - FAT32)
 Pin Konfigürasyonu
 Not: Bu projede yerleşik ekranın SDRAM ve LTDC (LCD-TFT Display Controller) trafiği ile SD Kartın SPI trafiği arasındaki donanımsal çakışmaları (DMA Bus meşguliyeti) önlemek için, standart pinler yerine özel pin haritalaması kullanılmıştır.
 
-| Modül   | Pin / Bağlantı |                       Görev                         |
-| MPU6050 |       PA8      | I2C3 SCL                                            |
-| MPU6050 |       PC9      | I2C3 SDA                                            |
-| SD Kart |       PE2      | SPI4 SCK                                            |
-| SD Kart |       PE5      | SPI4 MISO                                           |
-| SD Kart |       PE6      | SPI4 MOSI                                           |
-| SD Kart |       PE4      | SPI4 CS (Çakışmayı önleyen özel pin)                |
-| SD Kart |    5V / GND    | Güç Beslemesi (Kart üzerindeki LDO regülatörü için) |
 
 Sistem Mimarisi ve Karşılaşılan Zorluklar
 
