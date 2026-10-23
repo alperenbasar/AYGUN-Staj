@@ -56,6 +56,6 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
     - Ekranın LTDC/SDRAM DMA veri trafiği ile SD kartın SPI okuma/yazma döngüleri arasındaki veri yolu çakışmalarının (Bus matrix congestion), donanımsal pin izolasyonu (CS pini tahsisi) ile kilitlenmeden (non-blocking) çözümlenmesi.
   
   11. [10-PIC12F1822-Sarj-Durumu-ve-Animasyon-Gostergesi](./10-PIC12F1822-Sarj-Durumu-ve-Animasyon-Gostergesi)
-   - Yeni geliştirilen donanım ürünü için Microchip PIC12F1822 (SOIC-8/DIP-8) kullanılarak tasarlanan özel şarj durum göstergesi ve animasyon kontrol kartı.
-   - KiCad ile şematik tasarımı ve LPKF prototip/kazıma tezgahına uygun PCB yerleşimi; dahili pull-up dirençleri ve donanımsal ICSP programlama hattı entegrasyonu.
-   - Şarj entegresinden gelen sinyallerin (STAT) gürültüden arındırılması için yazılımsal filtreleme (debounce) algoritmaları ve şarj durumuna göre LED animasyon döngüleri (Şarj oluyor / Şarj bitti).
+      - Yeni geliştirilen donanım ürünü için Microchip PIC12F1822 (SOIC-8/DIP-8) kullanılarak tasarlanan özel şarj durum göstergesi ve animasyon kontrol kartı.
+      - KiCad ile şematik tasarımı ve LPKF prototip/kazıma tezgahına uygun PCB yerleşimi; dahili pull-up dirençleri ve donanımsal ICSP programlama hattı entegrasyonu.
+      - Şarj entegresinden gelen sinyallerin (STAT) gürültüden arındırılması için yazılımsal filtreleme (debounce) algoritmaları ve şarj durumuna göre LED animasyon döngüleri (Şarj oluyor / Şarj bitti).
