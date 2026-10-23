@@ -1,4 +1,4 @@
-G-Meter ve Karakutu Veri Kaydedici (Blackbox Data Logger)
+G-Meter ve Karakutu Veri Kaydedici
 
 Bu proje, araç dinamiklerini veya nesne hareketlerini gerçek zamanlı olarak ölçmek, görselleştirmek ve kaydetmek amacıyla tasarlanmış gömülü bir telemetri (karakutu) sistemidir. STM32F429I-DISC1 üzerinde çalışan sistem, MPU6050 sensöründen aldığı ivme verilerini hem ekranda canlı bir "G-Meter (Radar)" olarak gösterir hem de MicroSD karta milisaniye hassasiyetli bir CSV dosyası olarak kaydeder.
 
