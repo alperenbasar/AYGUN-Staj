@@ -24,38 +24,38 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
    - Akıllı telefon (BLE Terminal) ile bilgisayar (Tera Term) arasında iki yönlü seri haberleşme köprüsü.
    - Asenkron veri alımı için kesme tabanlı altyapı (`HAL_UART_Receive_IT`) ve callback yönetimi.
 
-3. [03-BLE-Tetiklemeli ve PC-Kontrollü-Hibrit-LED-Otomasyonu](./03-BLE-Tetiklemeli%20ve%20PC-Kontrollu-Hibrit-LED-Otomasyon-Sistemi)
+4. [03-BLE-Tetiklemeli ve PC-Kontrollü-Hibrit-LED-Otomasyonu](./03-BLE-Tetiklemeli%20ve%20PC-Kontrollu-Hibrit-LED-Otomasyon-Sistemi)
    - Telefondan gelen Bluetooth komutuyla tetiklenen durum makinesi (state machine) mimarisi.
    - PC terminaline dinamik menü basılması ve klavye girdisine göre dahili/harici LED kontrolü.
    - Seri port kilitlenmelerini önleyen `ORE` (Overrun Error) hata yönetimi.
 
-4. [04-STM32-Donanımsal-Timer-PWM ile Pürüzsüz LED Parlaklık Kontrolü](./04-STM32-Donanimsal-Timer-PWM%20ile%20Puruzsuz-LED-Parlaklik-Kontrolu)
+6. [04-STM32-Donanımsal-Timer-PWM ile Pürüzsüz LED Parlaklık Kontrolü](./04-STM32-Donanimsal-Timer-PWM%20ile%20Puruzsuz-LED-Parlaklik-Kontrolu)
    - `TIM1 Channel 1` üzerinden donanımsal Darbe Genişlik Modülasyonu (PWM) sinyali üretimi.
    - 1000 adımlı yüksek çözünürlükle akıcı ve titreşimsiz "Breathing / Nefes Alma" görsel efekti.
 
-5. [05-STM32-12-Bit-ADC-Okuması ile Gerçek Zamanlı PWM Parlaklık Kontrolü](./05-STM32-12-Bit-ADC-Okumasi%20ile%20Gercek-Zamanli-PWM-Parlaklik-Kontrolu)
+8. [05-STM32-12-Bit-ADC-Okuması ile Gerçek Zamanlı PWM Parlaklık Kontrolü](./05-STM32-12-Bit-ADC-Okumasi%20ile%20Gercek-Zamanli-PWM-Parlaklik-Kontrolu)
    - Potansiyometre üzerinden 12-bit çözünürlükte (0–4095) analog gerilim verisi okuma (`ADC1`).
    - Matematiksel ölçekleme ile analog değerin `TIM3` PWM doluluk oranına dönüştürülmesi ve gerçek zamanlı LED parlaklık ayarı.
 
-6. [06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Sürüş-Denemesi](./06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Surus-Denemesi%20(BSP%20Hello%20World))
-   - Dahili 2.4" TFT LCD ekranın BSP sürücü katmanı ile ayağa kaldırılması ("Hello World" testi).
-   - Maksimum çekirdek frekansı (180 MHz Over-Drive) ve temel saat/güç konfigürasyonunun doğrulanması.
+10. [06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Sürüş-Denemesi](./06-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Surus-Denemesi%20(BSP%20Hello%20World))
+    - Dahili 2.4" TFT LCD ekranın BSP sürücü katmanı ile ayağa kaldırılması ("Hello World" testi).
+    - Maksimum çekirdek frekansı (180 MHz Over-Drive) ve temel saat/güç konfigürasyonunun doğrulanması.
 
-7. [07-STM32F429--Dahili-TFT-LCD ile 3D-Starfield-Grafik-Simülasyonu](./07-STM32F429--Dahili-TFT-LCD%20ile%203D-Starfield-Grafik-Simülasyonu)
-   - 3 boyutlu uzay koordinatlarının ($X, Y, Z$) ekrana 2D perspektif izdüşümü ile yansıtılması.
-   - Harici SDRAM üzerinde ekran yırtılmasını (flicker) engelleyen dinamik piksel temizleme ve çizim tekniğiyle 70 parçacıklı yıldız alanı simülasyonu.
+11. [07-STM32F429--Dahili-TFT-LCD ile 3D-Starfield-Grafik-Simülasyonu](./07-STM32F429--Dahili-TFT-LCD%20ile%203D-Starfield-Grafik-Simülasyonu)
+    - 3 boyutlu uzay koordinatlarının ($X, Y, Z$) ekrana 2D perspektif izdüşümü ile yansıtılması.
+    - Harici SDRAM üzerinde ekran yırtılmasını (flicker) engelleyen dinamik piksel temizleme ve çizim tekniğiyle 70 parçacıklı yıldız alanı simülasyonu.
 
-8. [08-STM32-MPU6050-ile-Akilli-Guvenlik-Sistemi](./08-STM32-MPU6050-ile-Akilli-Guvenlik-Sistemi)
-   - MPU6050 ivmeölçer/jiroskop sensörü ile hassas anomali (hareket/sarsıntı) tespiti yapan çok katmanlı alarm sistemi.
-   - İhlal durumunda PC'ye seri port üzerinden uyarı iletimi ve Notify API ile akıllı telefona mobil "Push" bildirim entegrasyonu.
-   - Dahili dokunmatik TFT ekranın Numpad arayüzü olarak kullanılarak alarmın donanımsal şifre ile iptal edilmesi (Disarm) mekanizması.
+11. [08-STM32-MPU6050-ile-Akilli-Guvenlik-Sistemi](./08-STM32-MPU6050-ile-Akilli-Guvenlik-Sistemi)
+    - MPU6050 ivmeölçer/jiroskop sensörü ile hassas anomali (hareket/sarsıntı) tespiti yapan çok katmanlı alarm sistemi.
+    - İhlal durumunda PC'ye seri port üzerinden uyarı iletimi ve Notify API ile akıllı telefona mobil "Push" bildirim entegrasyonu.
+    - Dahili dokunmatik TFT ekranın Numpad arayüzü olarak kullanılarak alarmın donanımsal şifre ile iptal edilmesi (Disarm) mekanizması.
 
-9. [09-STM32-GMeter-ve-Karakutu-Veri-Kaydedici](./09-STM32-GMeter-ve-Karakutu-Veri-Kaydedici)
-   - MPU6050 ivme verilerinin Low-Pass Filter (Düşük Geçiren Filtre) ile işlenerek ekranda 25 FPS hızında gerçek zamanlı "G-Meter" (Radar) arayüzüne dönüştürülmesi.
-   - Araç dinamiği verilerinin (Zaman, AccX, AccY, AccZ) MicroSD karta (FAT32) donanımsal SPI hattı üzerinden kesintisiz bir `.csv` dosyası olarak kaydedilmesi (Data Logging).
-   - Ekranın LTDC/SDRAM DMA veri trafiği ile SD kartın SPI okuma/yazma döngüleri arasındaki veri yolu çakışmalarının (Bus matrix congestion), donanımsal pin izolasyonu (CS pini tahsisi) ile kilitlenmeden (non-blocking) çözümlenmesi.
+11. [09-STM32-GMeter-ve-Karakutu-Veri-Kaydedici](./09-STM32-GMeter-ve-Karakutu-Veri-Kaydedici)
+    - MPU6050 ivme verilerinin Low-Pass Filter (Düşük Geçiren Filtre) ile işlenerek ekranda 25 FPS hızında gerçek zamanlı "G-Meter" (Radar) arayüzüne dönüştürülmesi.
+    - Araç dinamiği verilerinin (Zaman, AccX, AccY, AccZ) MicroSD karta (FAT32) donanımsal SPI hattı üzerinden kesintisiz bir `.csv` dosyası olarak kaydedilmesi (Data Logging).
+    - Ekranın LTDC/SDRAM DMA veri trafiği ile SD kartın SPI okuma/yazma döngüleri arasındaki veri yolu çakışmalarının (Bus matrix congestion), donanımsal pin izolasyonu (CS pini tahsisi) ile kilitlenmeden (non-blocking) çözümlenmesi.
   
-  10. [10-PIC12F1822-Sarj-Durumu-ve-Animasyon-Gostergesi](./10-PIC12F1822-Sarj-Durumu-ve-Animasyon-Gostergesi)
+  11. [10-PIC12F1822-Sarj-Durumu-ve-Animasyon-Gostergesi](./10-PIC12F1822-Sarj-Durumu-ve-Animasyon-Gostergesi)
    - Yeni geliştirilen donanım ürünü için Microchip PIC12F1822 (SOIC-8/DIP-8) kullanılarak tasarlanan özel şarj durum göstergesi ve animasyon kontrol kartı.
    - KiCad ile şematik tasarımı ve LPKF prototip/kazıma tezgahına uygun PCB yerleşimi; dahili pull-up dirençleri ve donanımsal ICSP programlama hattı entegrasyonu.
    - Şarj entegresinden gelen sinyallerin (STAT) gürültüden arındırılması için yazılımsal filtreleme (debounce) algoritmaları ve şarj durumuna göre LED animasyon döngüleri (Şarj oluyor / Şarj bitti).
