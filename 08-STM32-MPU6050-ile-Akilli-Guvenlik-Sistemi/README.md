@@ -51,7 +51,7 @@ Tetiklenme: Belirlenen eşik (threshold) değerinin üzerinde bir hareket algıl
 
 Eylemler:
 
-- Harici LED hızlı (örneğin 100ms aralıklarla) yanıp sönmeye başlar.
+- Harici LED hızlı yanıp sönmeye başlar.
 
 - Seri port üzerinden PC'ye `\[UYARI] Hareket algilandi!` verisi yollanır.
 
