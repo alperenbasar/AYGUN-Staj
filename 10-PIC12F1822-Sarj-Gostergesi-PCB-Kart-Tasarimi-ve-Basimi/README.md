@@ -60,16 +60,16 @@ void main(void) {
     ANSELA = 0x01;              // RA0 Analog (STAT), diğerleri dijital
     TRISA  = 0x09;              // RA0 ve RA3 giriş, diğerleri çıkış
     
-    // İşlemci İçinden Sızıntıyı Önlemek İçin Pull-up Kapatma
+İşlemci İçinden Sızıntıyı Önlemek İçin Pull-up Kapatma
     OPTION_REGbits.nWPUEN = 0;  
     WPUA   = 0x08;              // Sadece RA3 (ICSP/MCLR) pull-up'lı
 
-    // ADC Kurulumu (Fosc/8, VDD Referans)
+// ADC Kurulumu (Fosc/8, VDD Referans)
     ADCON1 = 0xA0;
     ADCON0 = 0x01;
 
-    for (;;) {
-        /* 1) Analog Sinyali Oku, Eşiklerden Geçir */
+for (;;) {
+/* 1) Analog Sinyali Oku, Eşiklerden Geçir */
         adc = read_stat();
         if (adc >= ADC_CHARGE_MIN) {
             raw = ST_CHARGING;
@@ -77,10 +77,10 @@ void main(void) {
             raw = ST_FULL;
         } // Arada kalan voltajlarda önceki durum korunur
 
-        /* 2) 1 Saniyelik Zaman Filtresi (Debounce) Uygula */
+/* 2) 1 Saniyelik Zaman Filtresi (Debounce) Uygula */
         // (Sinyal 1 saniye boyunca bozulmazsa State güncellenir)
         
-        /* 3) State Makinesi ile Kesintisiz LED Sürümü */
+ /* 3) State Makinesi ile Kesintisiz LED Sürümü */
         switch (state) {
         case ST_CHARGING:
             // Animasyon adımları (Bloke edici delay olmadan)
@@ -89,7 +89,6 @@ void main(void) {
             // Şarj bitti, tüm LED'ler sabit
             break;
         }
-        
         tick(); // 10ms gecikme
     }
 }
