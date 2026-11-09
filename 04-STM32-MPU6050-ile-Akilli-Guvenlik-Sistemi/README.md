@@ -45,9 +45,9 @@ Bu proje, STM32F429I-DISC1 geliştirme kartı ve MPU6050 ivmeölçer/jiroskop se
 ## Sistem Mimarisi ve Akış Algoritması
 
 
-### İzleme Modu: MPU6050 sensörü sürekli olarak X, Y ve Z eksenlerindeki ivme/açı değişimlerini okur.
+-**İzleme Modu:** MPU6050 sensörü sürekli olarak X, Y ve Z eksenlerindeki ivme/açı değişimlerini okur.
 
-### Tetiklenme: Belirlenen eşik (threshold) değerinin üzerinde bir hareket algılandığında sistem "Alarm" moduna geçer.
+-**Tetiklenme:** Belirlenen eşik (threshold) değerinin üzerinde bir hareket algılandığında sistem "Alarm" moduna geçer.
 
 ### Eylemler:
 
