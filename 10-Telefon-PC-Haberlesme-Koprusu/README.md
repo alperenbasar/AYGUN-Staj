@@ -2,7 +2,7 @@
 Bu çalışma; mobil cihaz (akıllı telefon), HC-08 Bluetooth Low Energy (BLE) modülü ve bilgisayar terminali (Tera Term) arasında STM32 mikrodenetleyicisi üzerinden iki yönlü kablosuz haberleşme köprüsü kurmak amacıyla geliştirilmiştir.
 
 ## Çalışma Mantığı ve Veri Akışı
-Mobil Giriş: Akıllı telefondaki BLE seri terminal uygulamasından HC-08 modülüne kablosuz olarak bir karakter veya komut gönderilir.
+-**Mobil Giriş:** Akıllı telefondaki BLE seri terminal uygulamasından HC-08 modülüne kablosuz olarak bir karakter veya komut gönderilir.
 
 -**Asenkron Alım (Kesme):** HC-08 modülü veriyi STM32'nin USART1 hattına iletir. İşlemci döngüsünü bloklamamak için HAL_UART_Receive_IT fonksiyonu ile 1 baytlık donanımsal kesme (Interrupt) dinlemesi kullanılır.
 
