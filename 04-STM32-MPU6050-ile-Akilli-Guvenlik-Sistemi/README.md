@@ -14,13 +14,13 @@ Bu proje, STM32F429I-DISC1 geliştirme kartı ve MPU6050 ivmeölçer/jiroskop se
 
 ## Çok Katmanlı Uyarı Sistemi:
 
-### Görsel Alarm: Tetiklenme anında harici LED'in yüksek frekansta yanıp sönmesi (strobe efekti).
+-**Görsel Alarm:** Tetiklenme anında harici LED'in yüksek frekansta yanıp sönmesi (strobe efekti).
 
-### Lokal Uyarı: PC terminali/Seri Monitör üzerine anlık olarak "Hareket Algılandı!" uyarısının düşmesi.
+-**Lokal Uyarı:** PC terminali/Seri Monitör üzerine anlık olarak "Hareket Algılandı!" uyarısının düşmesi.
 
-### Mobil Push Bildirimi: Notify API entegrasyonu sayesinde saniyeler içinde akıllı telefona acil durum bildiriminin gönderilmesi.
+-**Mobil Push Bildirimi:** Notify API entegrasyonu sayesinde saniyeler içinde akıllı telefona acil durum bildiriminin gönderilmesi.
 
-### Dokunmatik Şifre Paneli (Numpad): STM32 üzerindeki TFT LCD ekranın bir numpad arayüzü olarak kullanılması. Alarm sadece doğru PIN kodunun girilmesiyle devre dışı bırakılabilir.
+-**Dokunmatik Şifre Paneli (Numpad):** STM32 üzerindeki TFT LCD ekranın bir numpad arayüzü olarak kullanılması. Alarm sadece doğru PIN kodunun girilmesiyle devre dışı bırakılabilir.
 
 
 
