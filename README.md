@@ -5,15 +5,15 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
 ---
 
 ## Kullanılan Donanım ve Araçlar
-Mikrodenetleyiciler & Geliştirme Kartları: STM32F429I-DISC1 (ARM Cortex-M4 @ 180 MHz), Microchip PIC12F1822, Arduino (AVR)
+---
 
-Devre Tasarımı & Prototipleme (EDA): Altium Designer (v26), KiCad, LPKF S63 PCB Kazıma Makinesi (CNC Prototipleme), SMD/THT Dizgi ve Lehimleme
+## Kullanılan Donanım ve Araçlar
+- **Mikrodenetleyiciler & Geliştirme Kartları:** STM32F429I-DISC1 (ARM Cortex-M4 @ 180 MHz), Microchip PIC12F1822, Arduino (AVR)
+- **Devre Tasarımı & Prototipleme (EDA):** Altium Designer (v26), KiCad, LPKF S63 PCB Kazıma Makinesi (CNC Prototipleme), SMD/THT Dizgi ve Lehimleme
+- **Yazılım & Geliştirme Ortamları:** C/C++, Python (Tkinter, pySerial), STM32CubeIDE (HAL Kütüphaneleri, FatFs), MPLAB X IDE (XC8 Derleyici), PICkit 3, Tera Term
+- **Sensörler & Aktüatörler:** MPU6050 (İvmeölçer ve Jiroskop), INA226 (Hassas Güç Analizörü), LDR Sensörler, FT5325M Servo Motorlar
+- **Haberleşme, Güç & Arayüz Modülleri:** HC-08 Bluetooth Low Energy (BLE), MicroSD Kart Modülü (SPI), CN3303 Lityum Batarya Şarj Kontrolcüsü, 2.4" QVGA TFT LCD (LTDC), STMPE811 Dokunmatik Kontrolcü
 
-Yazılım & Geliştirme Ortamları: C/C++, Python (Tkinter, pySerial), STM32CubeIDE (HAL Kütüphaneleri, FatFs), MPLAB X IDE (XC8 Derleyici), PICkit 3, Tera Term
-
-Sensörler & Aktüatörler: MPU6050 (İvmeölçer ve Jiroskop), INA226 (Hassas Güç Analizörü), LDR Sensörler, FT5325M Servo Motorlar
-
-Haberleşme, Güç & Arayüz Modülleri: HC-08 Bluetooth Low Energy (BLE), MicroSD Kart Modülü (SPI), CN3303 Lityum Batarya Şarj Kontrolcüsü, 2.4" QVGA TFT LCD (LTDC), STMPE811 Dokunmatik Kontrolcü
 
 ---
 
