@@ -1,5 +1,5 @@
 # STM32 Tabanlı Güvenli PC Kilit ve BLE Bildirim Sistemi
-Bu proje, STM32F429I-DISC1 geliştirme kiti, HC-08 BLE modülü ve Python tabanlı bir ana bilgisayar yazılımı kullanılarak geliştirilmiş iki aşamalı bir fiziksel güvenlik ve kimlik doğrulama sistemidir. Şifre doğrulama yükü işletim sisteminden alınarak doğrudan mikrodenetleyici donanımına aktarılmıştır.
+Bu proje, STM32F429I-DISC1 geliştirme kiti, HC-08 BLE modülü ve Python tabanlı bir ana bilgisayar yazılımı kullanılarak geliştirilmiş iki aşamalı bir fiziksel güvenlik ve kimlik doğrulama sistemidir. STM32 üzerinde bulunuan ekrandan kilitle butonuna basıldığında bilgisayar kilitlenir, tekrar açılması için ekran üzerinden doğru parola girilmelidir. Şifre doğrulama yükü işletim sisteminden alınarak doğrudan mikrodenetleyici donanımına aktarılmıştır.
 
 ## Temel Özellikler
 -**Donanımsal Kimlik Doğrulama:** Şifre doğrulaması tamamen STM32 üzerinde çalışan gömülü yazılımla gerçekleştirilir.
