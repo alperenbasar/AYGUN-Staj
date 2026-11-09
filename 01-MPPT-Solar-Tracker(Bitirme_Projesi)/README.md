@@ -5,9 +5,9 @@ Bu proje, LDR sensörler ve FT5325M servo motorlar kullanılarak güneş panelle
 Bu çalışma, Güneş'in gökyüzündeki yatay ve dikey hareketlerini otonom olarak takip ederek "kosinüs kayıplarını" önlemeyi ve laboratuvar ortamında elektriksel yük optimizasyonunu gerçekleştirmeyi hedefler[cite: 25, 26]. 
 
 ## Proje Özeti ve Hedefleri
-- **Otonom Yönelim:** Güneşin konumunu 4 adet LDR sensörle algılayarak çift eksenli mekanik takip (yatayda 0-180 derece, dikeyde 0-90 derece)[cite: 22, 63].
-- **Güç Analizi:** INA226 hassas güç analizörü ve 73 $\Omega$ alüminyum yük direnci ile anlık voltaj, akım ve güç ölçümü[cite: 28, 48, 63].
-- **Verim Optimizasyonu:** Sabit açılı sistemlere kıyasla elde edilen güç artışının MPPT mantığıyla analizi ve laboratuvar ortamında 1,8296 W Maksimum Güç Noktasının (MPP) tespiti[cite: 48].
+- **Çift Eksenli Mekanik Tasarım ve Tahrik Sistemi:** Panelin hareket kabiliyeti, yatayda (Azimut) 0°-180° ve dikeyde (Tilt) 0°-90° dönebilecek şekilde tasarlanmıştır. Taban kısmındaki ağırlık merkezini optimize etmek ve motor üzerindeki eksenel yükü azaltmak amacıyla döner tabla rulmanı kullanılmış; hareketler yüksek torklu Feetech FT5320M dijital metal dişli servo motorlarla sağlanmıştır.
+- **Otonom Sensör ve Algoritma Altyapısı:** Panel yüzeyine yerleştirilen 4 adet LDR sensör (bağımsız ikili gruplar halinde), çevresel ışık şiddetini Analog-Dijital Dönüştürücü (ADC) üzerinden anlık olarak okur. Diferansiyel kontrol mantığıyla çalışan yazılımda, osilasyonu ve mekanik aşınmayı önlemek için 40 birimlik bir histerezis (ölü bant) eşik değeri tanımlanmıştır. Hareket komutları, sistemin sarsıntısız ve kararlı çalışması için yavaşlatılmış stabil döngülerle (1000 ms gecikme) işlenir.
+- **MPPT ve Güç Analizi:** Sistemden çekilen akım ve gerilim değerleri I2C protokolü üzerinden haberleşen INA226 dijital güç monitörü ile hassas bir şekilde takip edilmiştir. Sabit ışık kaynağı altında yapılan 20 farklı direnç kademeli laboratuvar testinde; 73 $\Omega$ alüminyum güç direnci yükü altında panelin 1,8296 W Maksimum Güç Noktasına (MPP) ulaştığı deneysel olarak doğrulanmıştır.   
 
 ## Kullanılan Donanım ve Bileşenler
 - **Mikrodenetleyici:** Arduino Uno R3 (ATmega328, AVR Mimarisi)[cite: 37]
