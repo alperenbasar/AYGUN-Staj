@@ -1,4 +1,4 @@
-## 02-PIC12F1822-Sarj-Gostergesi-PCB-Kart-Tasarimi-ve-Basimi
+# 02-PIC12F1822-Sarj-Gostergesi-PCB-Kart-Tasarimi-ve-Basimi
 
 Bu repo, Microchip PIC12F1822 8-bit mikrodenetleyici tabanlı, CN3303 lityum şarj entegresi ile tam uyumlu çalışan özel bir şarj durum göstergesi kontrolcüsü için uçtan uca tasarım, prototipleme, donanımsal sinyal izolasyonu, PCB yerleşimi ve gömülü yazılım süreçlerini içermektedir.
 
@@ -6,7 +6,7 @@ Bu proje, yeni geliştirilen bir donanım ürünü üzerinde görsel bir kümül
 
 ---
 
-# Geliştirme Aşamaları ve Donanımsal Çözümler
+## Geliştirme Aşamaları ve Donanımsal Çözümler
 
 1. Gereksinimler ve Şematik Tasarım: Giriş sinyalleri (`STAT` şarj sinyali) ve çıkış gereksinimleri belirlendi. KiCad üzerinden şematik çizimi tamamlandı.
 2. Sinyal İzolasyonu ve Prototipleme: İlk prototiplemede şarj modülünün (CN3303) open-drain çıkışında mikrodenetleyicinin dijital giriş ve pull-up dirençlerinden kaynaklı kaçak akımlar ve LED çakışmaları tespit edildi. Bu donanımsal kilitlenmeyi çözmek amacıyla, giriş hattında yüksek empedanslı bir gerilim bölücü (22K seri, 100K pull-down) kullanılarak tam elektriksel izolasyon sağlandı.
@@ -15,7 +15,7 @@ Bu proje, yeni geliştirilen bir donanım ürünü üzerinde görsel bir kümül
 
 ---
 
-# Donanım Özellikleri
+## Donanım Özellikleri
 
 *   Mikrodenetleyici: Microchip PIC12F1822 (SOIC-8)
 *   Osilatör: Dahili 4 MHz HFINTOSC (Harici kristal osilatöre ihtiyaç duyulmaz)
@@ -25,7 +25,7 @@ Bu proje, yeni geliştirilen bir donanım ürünü üzerinde görsel bir kümül
 
 ---
 
-# Repo Klasör Yapısı
+## Repo Klasör Yapısı
 
 *   `Firmware/`: MPLAB X C kaynak kodlarını (`main.c`) ve üretim hex dosyalarını barındırır.
 *   `Hardware/`: KiCad şematik (`.kicad_sch`) ve PCB yerleşim (`.kicad_pcb`) dosyalarını içerir.
@@ -33,7 +33,7 @@ Bu proje, yeni geliştirilen bir donanım ürünü üzerinde görsel bir kümül
 
 ---
 
-# Yazılım (Firmware) Genel Bakış
+## Yazılım (Firmware) Genel Bakış
 
 Yazılım; donanımsal gürültüleri ve kararsız mod geçişlerini (örn. pil bağlı değilken oluşan osilasyonları) engellemek için sinyali Analog (ADC) olarak okur. Belirlenen histerezis eşikleri (`ADC_CHARGE_MIN` ve `ADC_FULL_MAX`) ve 1 saniyelik zaman bazlı filtreleme ile temizlenmiş sinyal üzerinden şarj kümülatif animasyonunu yönetir. Durum makinesi mantığı sayesinde işlemci animasyon sırasında kör (kilitli) kalmaz.
 
