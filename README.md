@@ -1,10 +1,5 @@
-# Aygün Cerrahi Aletler - Staj Çalışmaları
+Projeler
 
-Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve çevre birimleri kullanılarak geliştirdiğim gömülü sistemler, haberleşme protokolleri ve yazılım projeleri yer almaktadır.
-
----
-
-## Kullanılan Donanım ve Araçlar
 ---
 
 ## Kullanılan Donanım ve Araçlar
@@ -14,52 +9,56 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
 - **Sensörler & Aktüatörler:** MPU6050 (İvmeölçer ve Jiroskop), INA226 (Hassas Güç Analizörü), LDR Sensörler, FT5325M Servo Motorlar
 - **Haberleşme, Güç & Arayüz Modülleri:** HC-08 Bluetooth Low Energy (BLE), MicroSD Kart Modülü (SPI), CN3303 Lityum Batarya Şarj Kontrolcüsü, 2.4" QVGA TFT LCD (LTDC), STMPE811 Dokunmatik Kontrolcü
 
-
 ---
 
 ## Proje İndeksi
 
-1. [01-PIC12F1822-Sarj-Gostergesi-PCB-Kart-Tasarimi-ve-Basimi](./01-PIC12F1822-Sarj-Gostergesi-PCB-Kart-Tasarimi-ve-Basimi)
+1. [01-MPPT-Solar-Tracker(Bitirme_Projesi)](./01-MPPT-Solar-Tracker(Bitirme_Projesi))
+   - LDR sensörler ve FT5325M servo motorlar kullanılarak güneş panellerinin ışık kaynağına göre maksimum verimle yönelimini sağlayan Arduino tabanlı çift eksenli elektromekanik sistem tasarımı.
+   - INA226 hassas güç sensörleri ile anlık akım ve gerilim verilerinin işlenmesi, yazılımsal MPPT (Maksimum Güç Noktası Takibi) analizi ve sistem verimlilik optimizasyonunun gerçekleştirilmesi.
+   - Gömülü sistem yazılımı, motor kontrol mantığı ve donanım entegrasyonu süreçlerinin uçtan uca tamamlanması.
+
+2. [02-PIC12F1822-Sarj-Gostergesi-PCB-Kart-Tasarimi-ve-Basimi](./02-PIC12F1822-Sarj-Gostergesi-PCB-Kart-Tasarimi-ve-Basimi)
    - CN3303 lityum şarj entegresi ile tam uyumlu çalışan, Microchip PIC12F1822 (SOIC-8) kullanılarak tasarlanmış akıllı şarj durum göstergesi ve 3 kademeli (Kırmızı-Sarı-Yeşil) kümülatif dolum animasyonu kontrol kartı.
    - KiCad ile şematik tasarımı ve LPKF S63 kazıma tezgahına uygun tek katmanlı PCB yerleşimi. Şarj modülünün open-drain çıkışında oluşan kaçak akımları ve LED çakışmalarını önlemek amacıyla yüksek empedanslı gerilim bölücü (22K/100K) kullanılarak donanımsal izolasyon sağlandı.
    - STAT pininden gelen kararsız voltaj seviyeleri dijital GPIO yerine ADC ile okundu. Şarj entegresinin mod geçişlerinde yarattığı sinyal gürültülerini ve LED dalgalanmalarını sıfıra indirmek için yazılımsal gerilim eşiği ve 1 saniyelik zaman tabanlı stabilizasyon (debounce) algoritmaları geliştirildi.
 
-2. [02-Akilli-PC-Kilit-Sistemi](./02-Akilli-PC-Kilit-Sistemi)
+3. [03-Akilli-PC-Kilit-Sistemi](./03-Akilli-PC-Kilit-Sistemi)
    - STM32F429I dokunmatik ekranı üzerinden çalışan gömülü şifre doğrulama sistemi.
    - Python tabanlı tam ekran kalkanı (overlay) ile bilgisayar erişimini engelleme/açma.
    - HC-08 BLE modülü üzerinden mobil cihaza anlık durum telemetrisi iletimi.
 
-3. [03-STM32-MPU6050-ile-Akilli-Guvenlik-Sistemi](./03-STM32-MPU6050-ile-Akilli-Guvenlik-Sistemi)
+4. [04-STM32-MPU6050-ile-Akilli-Guvenlik-Sistemi](./04-STM32-MPU6050-ile-Akilli-Guvenlik-Sistemi)
    - MPU6050 ivmeölçer/jiroskop sensörü ile hassas anomali (hareket/sarsıntı) tespiti yapan çok katmanlı alarm sistemi.
    - İhlal durumunda PC'ye seri port üzerinden uyarı iletimi ve Notify API ile akıllı telefona mobil "Push" bildirim entegrasyonu.
    - Dahili dokunmatik TFT ekranın Numpad arayüzü olarak kullanılarak alarmın donanımsal şifre ile iptal edilmesi (Disarm) mekanizması.
 
-4. [04-STM32-GMeter-ve-Karakutu-Veri-Kaydedici](./04-STM32-GMeter-ve-Karakutu-Veri-Kaydedici)
+5. [05-STM32-GMeter-ve-Karakutu-Veri-Kaydedici](./05-STM32-GMeter-ve-Karakutu-Veri-Kaydedici)
    - MPU6050 ivme verilerinin Low-Pass Filter (Düşük Geçiren Filtre) ile işlenerek ekranda 25 FPS hızında gerçek zamanlı "G-Meter" (Radar) arayüzüne dönüştürülmesi.
    - Araç dinamiği verilerinin (Zaman, AccX, AccY, AccZ) MicroSD karta (FAT32) donanımsal SPI hattı üzerinden kesintisiz bir `.csv` dosyası olarak kaydedilmesi (Data Logging).
    - Ekranın LTDC/SDRAM DMA veri trafiği ile SD kartın SPI okuma/yazma döngüleri arasındaki veri yolu çakışmalarının (Bus matrix congestion), donanımsal pin izolasyonu (CS pini tahsisi) ile kilitlenmeden (non-blocking) çözümlenmesi.
 
-5. [05-BLE-Tetiklemeli ve PC-Kontrollu-Hibrit-LED-Otomasyon-Sistemi](./05-BLE-Tetiklemeli%20ve%20PC-Kontrollu-Hibrit-LED-Otomasyon-Sistemi)
+6. [06-BLE-Tetiklemeli ve PC-Kontrollu-Hibrit-LED-Otomasyon-Sistemi](./06-BLE-Tetiklemeli%20ve%20PC-Kontrollu-Hibrit-LED-Otomasyon-Sistemi)
    - Telefondan gelen Bluetooth komutuyla tetiklenen durum makinesi (state machine) mimarisi.
    - PC terminaline dinamik menü basılması ve klavye girdisine göre dahili/harici LED kontrolü.
    - Seri port kilitlenmelerini önleyen `ORE` (Overrun Error) hata yönetimi.
 
-6. [06-STM32F429--Dahili-TFT-LCD ile 3D-Starfield-Grafik-Simülasyonu](./06-STM32F429--Dahili-TFT-LCD%20ile%203D-Starfield-Grafik-Simülasyonu)
+7. [07-STM32F429--Dahili-TFT-LCD ile 3D-Starfield-Grafik-Simülasyonu](./07-STM32F429--Dahili-TFT-LCD%20ile%203D-Starfield-Grafik-Simülasyonu)
    - 3 boyutlu uzay koordinatlarının ($X, Y, Z$) ekrana 2D perspektif izdüşümü ile yansıtılması.
    - Harici SDRAM üzerinde ekran yırtılmasını (flicker) engelleyen dinamik piksel temizleme ve çizim tekniğiyle 70 parçacıklı yıldız alanı simülasyonu.
 
-7. [07-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Surus-Denemesi (BSP Hello World)](./07-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Surus-Denemesi%20(BSP%20Hello%20World))
+8. [08-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Surus-Denemesi (BSP Hello World)](./08-STM32F429I-DISC1-Dahili-TFT-LCD-Ekran-İlk-Surus-Denemesi%20(BSP%20Hello%20World))
    - Dahili 2.4" TFT LCD ekranın BSP sürücü katmanı ile ayağa kaldırılması ("Hello World" testi).
    - Maksimum çekirdek frekansı (180 MHz Over-Drive) ve temel saat/güç konfigürasyonunun doğrulanması.
 
-8. [08-STM32-Donanimsal-Timer-PWM ile Puruzsuz-LED-Parlaklik-Kontrolu](./08-STM32-Donanimsal-Timer-PWM%20ile%20Puruzsuz-LED-Parlaklik-Kontrolu)
+9. [09-STM32-Donanimsal-Timer-PWM ile Puruzsuz-LED-Parlaklik-Kontrolu](./09-STM32-Donanimsal-Timer-PWM%20ile%20Puruzsuz-LED-Parlaklik-Kontrolu)
    - `TIM1 Channel 1` üzerinden donanımsal Darbe Genişlik Modülasyonu (PWM) sinyali üretimi.
    - 1000 adımlı yüksek çözünürlükle akıcı ve titreşimsiz "Breathing / Nefes Alma" görsel efekti.
 
-9. [09-Telefon-PC-Haberlesme-Koprusu](./09-Telefon-PC-Haberlesme-Koprusu)
-   - Akıllı telefon (BLE Terminal) ile bilgisayar (Tera Term) arasında iki yönlü seri haberleşme köprüsü.
-   - Asenkron veri alımı için kesme tabanlı altyapı (`HAL_UART_Receive_IT`) ve callback yönetimi.
+10. [10-Telefon-PC-Haberlesme-Koprusu](./10-Telefon-PC-Haberlesme-Koprusu)
+    - Akıllı telefon (BLE Terminal) ile bilgisayar (Tera Term) arasında iki yönlü seri haberleşme köprüsü.
+    - Asenkron veri alımı için kesme tabanlı altyapı (`HAL_UART_Receive_IT`) ve callback yönetimi.
 
-10. [10-STM32-12-Bit-ADC-Okumasi ile Gercek-Zamanli-PWM-Parlaklik-Kontrolu](./10-STM32-12-Bit-ADC-Okumasi%20ile%20Gercek-Zamanli-PWM-Parlaklik-Kontrolu)
+11. [11-STM32-12-Bit-ADC-Okumasi ile Gercek-Zamanli-PWM-Parlaklik-Kontrolu](./11-STM32-12-Bit-ADC-Okumasi%20ile%20Gercek-Zamanli-PWM-Parlaklik-Kontrolu)
     - Potansiyometre üzerinden 12-bit çözünürlükte (0–4095) analog gerilim verisi okuma (`ADC1`).
     - Matematiksel ölçekleme ile analog değerin `TIM3` PWM doluluk oranına dönüştürülmesi ve gerçek zamanlı LED parlaklık ayarı.
