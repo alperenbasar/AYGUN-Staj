@@ -9,7 +9,7 @@ const int ldr1Ust = A0;
 const int ldr1Alt = A1;
 
 const int startAngle1 = 0;
-const int endAngle1 = 30;
+const int endAngle1 = 45;
 int currentAngle1 = 0;
 
 // ===== 2. MOTOR =====
