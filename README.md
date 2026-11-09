@@ -18,9 +18,9 @@ Bu depoda, staj süresince Ar-Ge departmanında STM32 mikrodenetleyicileri ve ç
 PROJE İNDEKSİ
 
 01-PIC12F1822-Sarj-Gostergesi-PCB-Kart-Tasarimi-ve-Basimi
-• CN3303 lityum şarj entegresi ile tam uyumlu çalışan, Microchip PIC12F1822 (SOIC-8) kullanılarak tasarlanmış akıllı şarj durum göstergesi ve 3 kademeli (Kırmızı-Sarı-Yeşil) kümülatif dolum animasyonu kontrol kartı.
-• KiCad ile şematik tasarımı ve LPKF S63 kazıma tezgahına uygun tek katmanlı PCB yerleşimi. Şarj modülünün open-drain çıkışında oluşan kaçak akımları ve LED çakışmalarını önlemek amacıyla yüksek empedanslı gerilim bölücü (22K/100K) kullanılarak donanımsal izolasyon sağlandı.
-• STAT pininden gelen kararsız voltaj seviyeleri dijital GPIO yerine ADC ile okundu. Şarj entegresinin mod geçişlerinde yarattığı sinyal gürültülerini ve LED dalgalanmalarını sıfıra indirmek için yazılımsal gerilim eşiği ve 1 saniyelik zaman tabanlı stabilizasyon (debounce) algoritmaları geliştirildi.
+##• CN3303 lityum şarj entegresi ile tam uyumlu çalışan, Microchip PIC12F1822 (SOIC-8) kullanılarak tasarlanmış akıllı şarj durum göstergesi ve 3 kademeli (Kırmızı-Sarı-Yeşil) kümülatif dolum animasyonu kontrol kartı.
+##• KiCad ile şematik tasarımı ve LPKF S63 kazıma tezgahına uygun tek katmanlı PCB yerleşimi. Şarj modülünün open-drain çıkışında oluşan kaçak akımları ve LED çakışmalarını önlemek amacıyla yüksek empedanslı gerilim bölücü (22K/100K) kullanılarak donanımsal izolasyon sağlandı.
+##• STAT pininden gelen kararsız voltaj seviyeleri dijital GPIO yerine ADC ile okundu. Şarj entegresinin mod geçişlerinde yarattığı sinyal gürültülerini ve LED dalgalanmalarını sıfıra indirmek için yazılımsal gerilim eşiği ve 1 saniyelik zaman tabanlı stabilizasyon (debounce) algoritmaları geliştirildi.
 
 02-Akilli-PC-Kilit-Sistemi
 • STM32F429I dokunmatik ekranı üzerinden çalışan gömülü şifre doğrulama sistemi.
